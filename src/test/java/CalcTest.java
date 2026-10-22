@@ -11,6 +11,10 @@ public class CalcTest
    @Test public void testSubtract()
    {
       assertTrue ("Calc difference incorrect", 2 == Calc.subtract ( 5, 3));
+   }
+
+   @Test public void testSubtractNrgative()
+   {
       assertTrue ("Calc difference incorrect", -1 == Calc.subtract ( 2, 3));
    }
 }
