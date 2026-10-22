@@ -13,7 +13,7 @@ public class CalcTest
       assertTrue ("Calc difference incorrect", 2 == Calc.subtract ( 5, 3));
    }
 
-   @Test public void testSubtractNrgative()
+   @Test public void testSubtractNegative()
    {
       assertTrue ("Calc difference incorrect", -1 == Calc.subtract ( 2, 3));
    }
@@ -28,9 +28,16 @@ public class CalcTest
       int result = Calc.divide(7, 2);                           
       assertTrue ("Calc quotient incorrect", 3 == result);       
    }
+
    @Test(expected = ArithmeticException.class)
    public void testDivideByZero()
    {
       Calc.divide(7, 0);
+   }
+
+   @Test public void testDivideNegtive()
+   {
+      int result = Calc.divide(7, -2);                           
+      assertTrue ("Calc quotient incorrect", -3 == result);       
    }
 }
