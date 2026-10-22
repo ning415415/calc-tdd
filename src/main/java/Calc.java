@@ -9,4 +9,9 @@ public class Calc
    {
       return a + b;
    }
+
+   static public int subtract (int a, int b)
+   {
+      return a - b;
+   }
 }
