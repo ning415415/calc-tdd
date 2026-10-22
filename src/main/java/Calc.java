@@ -14,4 +14,9 @@ public class Calc
    {
       return a - b;
    }
+
+   static public int multiply (int a, int b)
+   {
+      return a * b;
+   }
 }
