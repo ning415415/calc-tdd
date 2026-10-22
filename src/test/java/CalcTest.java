@@ -17,4 +17,9 @@ public class CalcTest
    {
       assertTrue ("Calc difference incorrect", -1 == Calc.subtract ( 2, 3));
    }
+
+   @Test public void testMultiply()
+   {
+      assertTrue ("Calc product incorrect", 15 == Calc.multiply ( 3, 5));
+   }
 }
