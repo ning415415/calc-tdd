@@ -28,4 +28,9 @@ public class CalcTest
       int result = Calc.divide(7, 2);                           
       assertTrue ("Calc quotient incorrect", 3 == result);       
    }
+   @Test(expected = ArithmeticException.class)
+   public void testDivideByZero()
+   {
+      Calc.divide(7, 0);
+   }
 }
