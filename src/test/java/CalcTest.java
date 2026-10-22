@@ -22,4 +22,10 @@ public class CalcTest
    {
       assertTrue ("Calc product incorrect", 15 == Calc.multiply ( 3, 5));
    }
+
+   @Test public void testDivide()
+   {
+      int result = Calc.divide(7, 2);                           
+      assertTrue ("Calc quotient incorrect", 3 == result);       
+   }
 }
