@@ -33,8 +33,16 @@ public class Calc
 
    // Q6 cycle 4 (agent-written): repeated multiplication.
    // exponent == 0 runs the loop zero times, so power(0, 0) == 1 still holds.
+   // Q6 cycle 5 (agent-written): negative exponent -> 1 / base^|exponent| truncated toward zero.
+   // Only base 1 and -1 give a non-zero integer; every other base truncates to 0.
    static public int power (int base, int exponent)
    {
+      if (exponent < 0)
+      {
+         if (base == 1)  return 1;
+         if (base == -1) return (exponent % 2 == 0) ? 1 : -1;
+         return 0;
+      }
       int result = 1;
       for (int i = 0; i < exponent; i++)
       {
