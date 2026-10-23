@@ -56,4 +56,10 @@ public class CalcTest
       assertTrue ("Calc remainder incorrect for (7, -3)",  1 == Calc.modulo (7, -3));
       assertTrue ("Calc remainder incorrect for (-7, -3)", -1 == Calc.modulo (-7, -3));
    }
+
+   // Q6 cycle 3 (agent-written): decision (c) - power(0, 0) returns 1
+   @Test public void testPowerZeroToZero()
+   {
+      assertTrue ("Calc power incorrect for (0, 0)", 1 == Calc.power (0, 0));
+   }
 }
