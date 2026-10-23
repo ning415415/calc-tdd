@@ -39,6 +39,8 @@ public class Calc
    {
       if (exponent < 0)
       {
+         // Q6 cycle 6 (agent-written): 0 to a negative power is 1/0 -> student chose to throw
+         if (base == 0)  throw new ArithmeticException("zero to a negative power");
          if (base == 1)  return 1;
          if (base == -1) return (exponent % 2 == 0) ? 1 : -1;
          return 0;
