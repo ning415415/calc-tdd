@@ -62,4 +62,10 @@ public class CalcTest
    {
       assertTrue ("Calc power incorrect for (0, 0)", 1 == Calc.power (0, 0));
    }
+
+   // Q6 cycle 4 (agent-written): ordinary positive exponent
+   @Test public void testPowerPositiveExponent()
+   {
+      assertTrue ("Calc power incorrect for (2, 3)", 8 == Calc.power (2, 3));
+   }
 }
