@@ -40,4 +40,11 @@ public class CalcTest
       int result = Calc.divide(7, -2);                           
       assertTrue ("Calc quotient incorrect", -3 == result);       
    }
+
+   // Q6 cycle 1 (agent-written): decision (c) - modulo by zero throws ArithmeticException
+   @Test(expected = ArithmeticException.class)
+   public void testModuloByZero()
+   {
+      Calc.modulo(7, 0);
+   }
 }
