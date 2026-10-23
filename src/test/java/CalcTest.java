@@ -86,4 +86,12 @@ public class CalcTest
    {
       Calc.power(0, -1);
    }
+
+   // Q6 cycle 7 (agent-written): student decision - overflow throws ArithmeticException.
+   // 2^31 = 2147483648 is one more than Integer.MAX_VALUE (2147483647).
+   @Test(expected = ArithmeticException.class)
+   public void testPowerOverflowThrows()
+   {
+      Calc.power(2, 31);
+   }
 }
