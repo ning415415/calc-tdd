@@ -68,4 +68,15 @@ public class CalcTest
    {
       assertTrue ("Calc power incorrect for (2, 3)", 8 == Calc.power (2, 3));
    }
+
+   // Q6 cycle 5 (agent-written): decision (c) - negative exponent.
+   // The mathematical result 1 / base^|exponent| is truncated toward zero to an int.
+   @Test public void testPowerNegativeExponentTruncates()
+   {
+      assertTrue ("Calc power incorrect for (2, -1)",   0 == Calc.power (2, -1));   //  0.5   -> 0
+      assertTrue ("Calc power incorrect for (-2, -1)",  0 == Calc.power (-2, -1));  // -0.5   -> 0
+      assertTrue ("Calc power incorrect for (1, -3)",   1 == Calc.power (1, -3));   //  1     -> 1
+      assertTrue ("Calc power incorrect for (-1, -3)", -1 == Calc.power (-1, -3));  // -1     -> -1
+      assertTrue ("Calc power incorrect for (-1, -2)",  1 == Calc.power (-1, -2));  //  1     -> 1
+   }
 }
