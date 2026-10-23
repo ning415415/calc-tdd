@@ -79,4 +79,11 @@ public class CalcTest
       assertTrue ("Calc power incorrect for (-1, -3)", -1 == Calc.power (-1, -3));  // -1     -> -1
       assertTrue ("Calc power incorrect for (-1, -2)",  1 == Calc.power (-1, -2));  //  1     -> 1
    }
+
+   // Q6 cycle 6 (agent-written): student decision - power(0, negative) is 1/0, so it throws
+   @Test(expected = ArithmeticException.class)
+   public void testPowerZeroToNegativeThrows()
+   {
+      Calc.power(0, -1);
+   }
 }
