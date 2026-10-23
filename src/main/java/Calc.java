@@ -23,4 +23,11 @@ public class Calc
    {
       return a / b;
    }
+
+   // Q6 cycle 1 (agent-written): minimal code to pass testModuloByZero.
+   // Deliberately "fake it": the next test (negative operands) will force the real formula.
+   static public int modulo (int a, int b)
+   {
+      throw new ArithmeticException("modulo by zero");
+   }
 }
