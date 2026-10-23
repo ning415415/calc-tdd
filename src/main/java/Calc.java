@@ -30,4 +30,11 @@ public class Calc
    {
       return a % b;
    }
+
+   // Q6 cycle 3 (agent-written): minimal code to pass testPowerZeroToZero ("fake it").
+   // The next test, power(2, 3) == 8, will force a real loop.
+   static public int power (int base, int exponent)
+   {
+      return 1;
+   }
 }
