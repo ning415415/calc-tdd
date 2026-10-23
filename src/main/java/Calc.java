@@ -48,7 +48,8 @@ public class Calc
       int result = 1;
       for (int i = 0; i < exponent; i++)
       {
-         result = result * base;
+         // Q6 cycle 7 (agent-written): multiplyExact throws ArithmeticException on any int overflow
+         result = Math.multiplyExact(result, base);
       }
       return result;
    }
