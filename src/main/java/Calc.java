@@ -24,10 +24,10 @@ public class Calc
       return a / b;
    }
 
-   // Q6 cycle 1 (agent-written): minimal code to pass testModuloByZero.
-   // Deliberately "fake it": the next test (negative operands) will force the real formula.
+   // Q6 cycle 2 (agent-written): Java's % uses truncated division, so the result
+   // takes the sign of the dividend, and b == 0 throws ArithmeticException ("/ by zero").
    static public int modulo (int a, int b)
    {
-      throw new ArithmeticException("modulo by zero");
+      return a % b;
    }
 }
