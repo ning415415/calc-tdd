@@ -47,4 +47,13 @@ public class CalcTest
    {
       Calc.modulo(7, 0);
    }
+
+   // Q6 cycle 2 (agent-written): decision (c) - modulo with negative operands.
+   // The result takes the sign of the dividend (truncated division, same as Java's %).
+   @Test public void testModuloNegativeOperands()
+   {
+      assertTrue ("Calc remainder incorrect for (-7, 3)", -1 == Calc.modulo (-7, 3));
+      assertTrue ("Calc remainder incorrect for (7, -3)",  1 == Calc.modulo (7, -3));
+      assertTrue ("Calc remainder incorrect for (-7, -3)", -1 == Calc.modulo (-7, -3));
+   }
 }
