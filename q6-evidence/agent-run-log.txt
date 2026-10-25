@@ -1,0 +1,130 @@
+# Q6 agent-side test runs
+# Environment: agent cloud sandbox, OpenJDK 21 javac + JUnit 4.13.2 (JUnitCore). Same source files as the student's repo, staged at each step.
+# Student-side evidence = mvn clean test output saved by the student in q6-evidence/cycleN-*.txt
+
+### Cycle 1 RED (testModuloByZero, before implementation)  (2026-10-22 17:31:27)
+/mnt/user-data/uploads/calc-tdd/src/test/java/CalcTest.java:48: error: cannot find symbol
+      Calc.modulo(7, 0);
+          ^
+  symbol:   method modulo(int,int)
+  location: class Calc
+1 error
+### Cycle 1 MUTANT CHECK (wrong impl: modulo returns 0, no exception)  (2026-10-23 10:44:10)
+JUnit version 4.13.2
+........E
+Time: 0.014
+There was 1 failure:
+1) testModuloByZero(CalcTest)
+java.lang.AssertionError: Expected exception: java.lang.ArithmeticException
+
+FAILURES!!!
+Tests run: 8,  Failures: 1
+
+### Cycle 1 GREEN (modulo minimal: always throws)  (2026-10-23 10:44:27)
+JUnit version 4.13.2
+........
+Time: 0.009
+
+OK (8 tests)
+
+### Cycle 2 RED (testModuloNegativeOperands, before implementation)  (2026-10-23 11:02:58)
+JUnit version 4.13.2
+....E.....
+Time: 0.017
+There was 1 failure:
+1) testModuloNegativeOperands(CalcTest)
+java.lang.ArithmeticException: modulo by zero
+	at Calc.modulo(Calc.java:31)
+	at CalcTest.testModuloNegativeOperands(CalcTest.java:55)
+
+FAILURES!!!
+Tests run: 9,  Failures: 1
+
+### Cycle 2 GREEN (modulo = a % b)  (2026-10-23 11:15:15)
+JUnit version 4.13.2
+.........
+Time: 0.01
+
+OK (9 tests)
+
+### Cycle 3 RED (testPowerZeroToZero, before implementation)  (2026-10-23 11:17:12)
+/mnt/user-data/uploads/calc-tdd/src/test/java/CalcTest.java:63: error: cannot find symbol
+      assertTrue ("Calc power incorrect for (0, 0)", 1 == Calc.power (0, 0));
+                                                              ^
+  symbol:   method power(int,int)
+  location: class Calc
+1 error
+### Cycle 3 GREEN (power minimal: return 1)  (2026-10-23 11:19:56)
+JUnit version 4.13.2
+..........
+Time: 0.015
+
+OK (10 tests)
+
+### Cycle 4 RED (testPowerPositiveExponent, before implementation)  (2026-10-23 11:34:47)
+JUnit version 4.13.2
+.....E......
+Time: 0.008
+There was 1 failure:
+1) testPowerPositiveExponent(CalcTest)
+java.lang.AssertionError: Calc power incorrect for (2, 3)
+	at CalcTest.testPowerPositiveExponent(CalcTest.java:69)
+
+FAILURES!!!
+Tests run: 11,  Failures: 1
+
+### Cycle 4 GREEN (power = repeated multiplication)  (2026-10-23 11:40:09)
+JUnit version 4.13.2
+...........
+Time: 0.008
+
+OK (11 tests)
+
+### Cycle 5 RED (testPowerNegativeExponentTruncates, before implementation)  (2026-10-23 11:41:11)
+JUnit version 4.13.2
+.....E.......
+Time: 0.008
+There was 1 failure:
+1) testPowerNegativeExponentTruncates(CalcTest)
+java.lang.AssertionError: Calc power incorrect for (2, -1)
+	at CalcTest.testPowerNegativeExponentTruncates(CalcTest.java:76)
+
+FAILURES!!!
+Tests run: 12,  Failures: 1
+
+### Cycle 5 GREEN (negative exponent truncation)  (2026-10-23 11:46:06)
+JUnit version 4.13.2
+............
+Time: 0.008
+
+OK (12 tests)
+
+### Cycle 6 RED (testPowerZeroToNegativeThrows, before implementation)  (2026-10-23 11:47:25)
+JUnit version 4.13.2
+...........E..
+Time: 0.009
+There was 1 failure:
+1) testPowerZeroToNegativeThrows(CalcTest)
+java.lang.AssertionError: Expected exception: java.lang.ArithmeticException
+
+FAILURES!!!
+Tests run: 13,  Failures: 1
+
+### Cycle 6 GREEN (power(0, negative) throws)  (2026-10-23 11:59:09)
+JUnit version 4.13.2
+.............
+Time: 0.008
+
+OK (13 tests)
+
+### Cycle 7 RED (testPowerOverflowThrows, before implementation)  (2026-10-23 12:00:29)
+JUnit version 4.13.2
+...........E...
+Time: 0.008
+There was 1 failure:
+1) testPowerOverflowThrows(CalcTest)
+java.lang.AssertionError: Expected exception: java.lang.ArithmeticException
+
+FAILURES!!!
+Tests run: 14,  Failures: 1
+

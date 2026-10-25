@@ -1,0 +1,26 @@
+===================== Calc version: final
+--- example tests (CalcTest)
+OK (14 tests)
+--- property tests (CalcPropertyTest)
+1) powerWithHugeExponentFinishesQuickly(CalcPropertyTest)
+org.junit.runners.model.TestTimedOutException: test timed out after 2000 milliseconds
+Tests run: 9,  Failures: 1
+===================== Calc version: fresh
+--- example tests (CalcTest)
+OK (14 tests)
+--- property tests (CalcPropertyTest)
+OK (9 tests)
+===================== Calc version: overfit
+--- example tests (CalcTest)
+OK (14 tests)
+--- property tests (CalcPropertyTest)
+1) moduloDependsOnlyOnTheSizeOfTheDivisor(CalcPropertyTest)
+java.lang.AssertionError: modulo(a,b) == modulo(a,-b) for (737723,-619) expected:<1> but was:<494>
+2) powerMatchesBigIntegerOrThrowsOnOverflow(CalcPropertyTest)
+java.lang.AssertionError: power(-40,6) = -198967296 but exact value 4096000000 does not fit in int
+3) divideAndModuloSatisfyTheDivisionIdentity(CalcPropertyTest)
+java.lang.AssertionError: divide*b + modulo == a (737723,-619) q=-1191 r=1 expected:<737723> but was:<737230>
+Tests run: 9,  Failures: 3
+power(1, MAX_VALUE) = 1 in 1.43 s
+power(-1, MAX_VALUE) = -1 in 1.39 s
+power(0, MAX_VALUE) = 0 in 1.37 s

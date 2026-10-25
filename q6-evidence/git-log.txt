@@ -1,0 +1,26 @@
+cc8f1b4 feat(q6): power throws on int overflow (Math.multiplyExact)
+369b62d test(q6): power overflow throws ArithmeticException
+4dc9d64 feat(q6): power(0, negative) throws ArithmeticException
+a18c04f test(q6): power(0, negative) throws ArithmeticException
+57c597d feat(q6): negative exponent truncates toward zero
+d6bf46a test(q6): negative exponent truncates toward zero
+319bb4e feat(q6): power by repeated multiplication
+2052f7b test(q6): power(2,3) returns 8
+2c47f1a feat(q6): add power (minimal: return 1)
+0578a17 test(q6): power(0,0) returns 1
+743b568 feat(q6): modulo uses Java % (sign follows dividend)
+a170f27 test(q6): modulo result takes the sign of the dividend
+340b317 feat(q6): add modulo (minimal: throw on any input)
+c6afa1a test(q6): modulo by zero throws ArithmeticException
+047a85a chore: drop line-coverage rule (implicit constructor is never called)
+287265e test: divide by negetive.
+846a8fa test: divide by zero throws ArithmeticException (passes immediately)
+1b761b5 feat: add divide (integer division)
+1b8e430 test: divide returns integer quotient (7,2)
+75093c5 feat: add multiply
+c72087c test: multiply returns product (3,5)
+4b6acb3 refactor: split negative subtract case into its own test
+f60184a test: subtract handles negative result (passes immediately)
+dd5927b feat: add subtract
+a5c68be test: subtract returns difference (5,3)
+ae313b4 chore: starter Calc (add only) + Maven/CI setup
